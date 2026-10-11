@@ -1,0 +1,53 @@
+name: Pull from source
+
+on:
+  schedule:
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: pull-from-source
+  cancel-in-progress: false
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout mirror
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pull source into mirror
+        env:
+          SOURCE_PAT: ${{ secrets.SOURCE_PAT }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${SOURCE_PAT:-}" ]; then
+            echo "::error::SOURCE_PAT is empty"
+            exit 1
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git remote add source "https://x-access-token:${SOURCE_PAT}@github.com/smartlegionlab/smartlegionlab.github.io.git"
+          git fetch source master
+
+          git checkout source/master -- . ':(exclude).github'
+
+          echo "smartlegionlab.com" > CNAME
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No changes to sync"
+            exit 0
+          fi
+
+          git commit -m "chore: sync from source $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          git push origin HEAD
