@@ -1,4 +1,4 @@
-# Smart Legion Lab - Official Website <sup>v7.7.0</sup>
+# Smart Legion Lab - Official Website <sup>v7.7.2</sup>
 
 [![Live Site](https://img.shields.io/badge/Official%20Site-smartlegionlab.com-blue?style=for-the-badge&logo=github)](https://smartlegionlab.com)
 [![GitHub license](https://img.shields.io/github/license/smartlegionlab/smartlegionlab.github.io)](https://github.com/smartlegionlab/smartlegionlab.github.io/blob/master/LICENSE)
@@ -7,16 +7,6 @@
 [![GitHub forks](https://img.shields.io/github/forks/smartlegionlab/smartlegionlab.github.io?style=social)](https://github.com/smartlegionlab/smartlegionlab.github.io/network/members)
 
 **The official website of Smart Legion Lab** - a comprehensive digital platform showcasing our work in **software architecture**, **open-source development**, **cross-platform ecosystems**, and **theoretical computer science research**.
-
----
-
-## ⚠️ Disclaimer
-
-**By using this software, you agree to the full disclaimer terms.**
-
-**Summary:** Software provided "AS IS" without warranty. You assume all risks.
-
-**Full legal disclaimer:** See [DISCLAIMER.md](https://github.com/smartlegionlab/smartlegionlab.github.io/blob/master/DISCLAIMER.md)
 
 ---
 
@@ -29,6 +19,7 @@ Smart Legion Lab is a software research and development laboratory founded by Al
 - **4 foundational research paradigms** with DOI publications
 - **7 cross-platform ecosystems** (Smart Passwords, 2FA Management, NP Problem, etc.)
 - **36+ applications** (Desktop, Web, Mobile, CLI, Telegram Bots)
+- **Interactive browser demos** - neural networks (logic gates, digits, X/O, gender, chiptune, RGB colors, Morse, tic-tac-toe), games and utilities that run live in the browser with zero setup
 - **Team of two** (Alexander Suvorov Sr. & Jr.)
 
 The site is designed to be a **static, secure, and comprehensive** showcase that requires **no database**, **no backend**, and can be hosted **anywhere** with zero maintenance overhead.
@@ -86,7 +77,30 @@ A complete showcase of all applications developed by Smart Legion Lab.
 
 ---
 
-### 5. Projects
+### 5. Interactive
+Live, in-browser applications that run with zero setup - no installs, no servers, no build steps. A growing hub of demos that anyone can open directly in the browser. All neural networks are real multilayer perceptrons trained **from scratch in pure JavaScript** with live visualization, model export/import as JSON, and automatic stop when they reach the learning target.
+
+![Interactive Page Screenshot](https://github.com/smartlegionlab/smartlegionlab.github.io/blob/master/data/images/interactive.png)
+
+**Content:**
+
+- **Neural Network Demos** - real MLPs trained live in the browser:
+  - **Boolean-Logic Neural Network** - `2 → 3 → 1`, learns XOR / AND / OR / NAND / XNOR with a live decision map.
+  - **Handwritten-Digit Recognition** - `144 → 24 → 10`, recognizes handwritten digits 0–9 on a 12×12 grid with auto-generated hand-style samples.
+  - **X / O Shape Recognition** - `64 → 12 → 2`, the minimal dense net that tells X and O apart on an 8×8 grid.
+  - **Name Gender Classifier** - `2,746 → 48 → 1`, guesses gender from Russian, English or transliterated names (~750 names in the dataset).
+  - **Chiptune Composer** - `53 → 48 → 12`, composes 8-bit chiptune live with melody, rhythm grooves, bass and drums on a native Web Audio engine.
+  - **RGB Color Name Guesser** - `3 → 24 → 12`, names any RGB color across 12 color classes (red, orange, yellow, green, cyan, blue, purple, pink, brown, gray, black, white); trains to ~100% and stops automatically.
+  - **Morse Decoder** - `10 → 16 → 36`, learns the full International Morse table (A-Z and 0-9) and decodes your telegraph key presses live, with realistic dit/dah sounds and a key click synthesized by Web Audio.
+  - **Tic-Tac-Toe Brain** - `27 → 48 → 32 → 9`, a two-hidden-layer policy network that learns a perfect game of Tic-Tac-Toe from every reachable board position labeled by a minimax teacher; once trained it blocks every fork and never loses (a bottom-left console logs training and every move with top-3 candidates).
+- **Tools** - SmartPassLib, a deterministic zero-storage smart password generator (same secret + length gives the same password on any platform).
+- **Games** - Tanks (Battle City-style, 35 levels) and Tetris (7-bag randomizer, hold, ghost piece).
+- **Search & Filter**: Filter demos by type (Neural Network / Application / Game).
+- **Live Status**: Each demo opens directly in the browser, and every neural network demo supports training to 100%, live visualization (pulsing orbs, weight lines, loss graphs) and model export/import as JSON.
+
+---
+
+### 6. Projects
 A comprehensive, filterable list of all public repositories.
 
 ![Projects Page Screenshot](https://github.com/smartlegionlab/smartlegionlab.github.io/blob/master/data/images/projects.png)
@@ -94,11 +108,11 @@ A comprehensive, filterable list of all public repositories.
 **Content:**
 - **90+ Public Repositories**
 - **Project Cards**: Each displays description, topics, and links to GitHub
-- **Detailed Pages**: Every project has a dedicated page with full metadata
+- **Detailed Pages**: Every project has a dedicated page with full metadata (for example, the [from-scratch-neural-networks](https://smartlegionlab.com/projects/from-scratch-neural-networks.html) project page with live demos of its neural networks)
 
 ---
 
-### 6. Libraries
+### 7. Libraries
 A detailed view of all PyPI packages and libraries developed by Smart Legion Lab.
 
 ![Libraries Page Screenshot](https://github.com/smartlegionlab/smartlegionlab.github.io/blob/master/data/images/libraries.png)
@@ -110,7 +124,7 @@ A detailed view of all PyPI packages and libraries developed by Smart Legion Lab
 
 ---
 
-### 7. Articles
+### 8. Articles
 A curated list of articles and blog posts published on Dev.to and other platforms.
 
 ![Articles Page Screenshot](https://github.com/smartlegionlab/smartlegionlab.github.io/blob/master/data/images/articles.png)
@@ -121,7 +135,7 @@ A curated list of articles and blog posts published on Dev.to and other platform
 
 ---
 
-### 8. About & Team
+### 9. About & Team
 An overview of the team behind Smart Legion Lab.
 
 ![Team Page Screenshot](https://github.com/smartlegionlab/smartlegionlab.github.io/blob/master/data/images/team.png)
@@ -250,7 +264,7 @@ This project is licensed under the **BSD 3-Clause License**. See the [LICENSE](L
 
 ---
 
-## 📬 Connect
+## Connect
 
 [![Website](https://img.shields.io/badge/Website-smartlegionlab.com-blue)](https://smartlegionlab.com)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--3427--9611-brightgreen)](https://orcid.org/0009-0006-3427-9611)
@@ -259,7 +273,6 @@ This project is licensed under the **BSD 3-Clause License**. See the [LICENSE](L
 [![PyPI](https://img.shields.io/badge/PyPI-@smartlegionlab-orange)](https://pypi.org/user/smartlegionlab/)
 [![Email](https://img.shields.io/badge/Email-smartlegionlab@gmail.com-red)](mailto:smartlegionlab@gmail.com)
 [![Dev.to](https://img.shields.io/badge/Dev.to-@smartlegionlab-purple)](https://dev.to/smartlegionlab)
-
 
 ---
 
@@ -270,4 +283,12 @@ This project is licensed under the **BSD 3-Clause License**. See the [LICENSE](L
 </div>
 
 ---
+
+## Disclaimer
+
+**By using this software, you agree to the full disclaimer terms.**
+
+**Summary:** Software provided "AS IS" without warranty. You assume all risks.
+
+**Full legal disclaimer:** See [DISCLAIMER.md](https://github.com/smartlegionlab/smartlegionlab.github.io/blob/master/DISCLAIMER.md)
 
